@@ -9,11 +9,17 @@
         </div>
         <ul id="top_menu">
             <li><a href="#0" class="search-overlay-menu-btn"><i class="fas fa-search"></i></a></li>
-                <li>
-                    <div class="dropdown dropdown-cart">
-                        <a href="shop-cart.html" class="cart_bt"><i class="fas fa-cart-plus"></i> <strong></strong></a>
-                    </div>
-                </li>
+            <li>
+                <div class="dropdown dropdown-cart">
+                    @if(auth()->check())
+                     <a href="{{ route('getcart', auth()->user()->id) }}" class="cart_bt">
+                      <i class="fas fa-cart-plus"></i> 
+                      <strong>{{ App\Models\Cart::where('user_id', auth()->user()->id)->sum('quantity'); }}
+                      </strong>
+                     </a>
+                   @endif
+                </div>
+            </li>
             </li>
         
         </ul>

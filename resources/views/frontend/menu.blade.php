@@ -34,10 +34,10 @@
                                 {{-- <span class="old_price">${{ $item->price }}</span> --}}
                             </div>
                             @guest
-                                    <a href="javascript:void(0)" class="btn_1" data-bs-toggle="modal" data-bs-target="#exampleModal">add to cart</a>
-                                    @else
-                                    <a class="btn_1" href="{{--{{ route('cart.add', [$item->id, auth()->user()->id]) }}--}}">add to cart</a>
-                                    @endguest
+                            <a href="javascript:void(0)" class="btn_1" data-bs-toggle="modal" data-bs-target="#exampleModal">add to cart</a>
+                             @else
+                             <a class="btn_1" href="{{route('cart.add', [$item->id, auth()->user()->id]) }}">add to cart</a>
+                             @endguest
                         </div>
                     </div>
                     @endforeach
@@ -68,10 +68,10 @@
                                 {{-- <span class="old_price">${{ $item->price }}</span> --}}
                             </div>
                             @guest
-                                    <a href="javascript:void(0)" class="btn_1" data-bs-toggle="modal" data-bs-target="#exampleModal">add to cart</a>
-                                    @else
-                                    <a class="btn_1" href="{{--{{ route('cart.add', [$item->id, auth()->user()->id]) }}--}}">add to cart</a>
-                                    @endguest
+                             <a href="javascript:void(0)" class="btn_1" data-bs-toggle="modal" data-bs-target="#exampleModal">add to cart</a>
+                             @else
+                            <a class="btn_1" href="{{ route('cart.add', [$item->id, auth()->user()->id]) }}">add to cart</a>
+                            @endguest
                         </div>
                     </div>
                     @endforeach

@@ -16,14 +16,14 @@
                                             {{ $slider->sub_title }}
                                         </p>
                                         <div class="owl-slide-animated owl-slide-cta"><a class="btn_1 btn_scroll"
-                                                href="{{ route('menu') }}" role="button">Check Our Menu</a></div>
+                                        href="{{route('menu') }}" role="button">Check Our Menu</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+               @endforeach
             @endif
         </div>
         <div id="icon_drag_mobile"></div>
@@ -131,7 +131,7 @@
                                         <a href="{{ $menu->thumbnail }}" title="{{ $menu->title }}"
                                             data-effect="mfp-zoom-in">
                                             <img src="{{ $menu->thumbnail }}"
-                                                data-src="{{ $menu->thumbnail }}" class="lazy" alt="">
+                                            data-src="{{ $menu->thumbnail }}" class="lazy" alt="">
                                         </a>
                                     </figure>
                                     <div class="menu_title">
