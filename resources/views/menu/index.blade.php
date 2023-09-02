@@ -11,12 +11,13 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                 <th>Sl No.</th>
-                                 <th>Thumbnail</th>
-                                 <th>Title</th>
-                                 <th>Category</th>
-                                 <th>Status</th>
-                                 <th>Action</th>
+                                <th>Sl No.</th>
+                                <th>Thumnail</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,20 +27,14 @@
                                     <td>
                                         <img src="{{ asset($item->thumbnail) }}" alt="{{ $item->name }}" width="60">
                                     </td>
-
                                     <td>{{ $item->title }}</td>
-                                    
-                                    <td>{{ $item->title }}</td>
-                                    
-                                    <td><span class="badge {{$item->status == 1 ?
-                                    'badge-primary':'badge-warning'}}">{{ $item->status == 1 ?
-                                    'Published':'Draft'}}</span></td>
-                                    
-                                    
+                                    <td>{{ $item->category->name }}</td>
+                                    <td>${{ $item->price }}</td>
+                                    <td><span class="badge {{ $item->status == 1 ? 'badge-primary':'badge-warning' }}">{{ $item->status == 1 ? 'Published':'Draft' }}</span></td>
                                     <td>
-                                        <a class="btn btn-primary" href="{{ route('category.edit', $item->id) }}">Edit</a>
+                                        <a class="btn btn-primary" href="{{ route('menu.edit', $item->id) }}">Edit</a>
                                         <button class="btn btn-danger delete" type="button" id="{{ $item->id }}" class="btn btn-primary"
-                                         data-toggle="modal" data-target="#exampleModal">Delete</button>
+                                            data-toggle="modal" data-target="#exampleModal">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -81,7 +76,7 @@
     <script>
         $('.delete').on('click', function () {
             const id = this.id;
-            $('#deleteModal').attr('action', "{{ route('category.destroy', '') }}" + '/' + id);
+            $('#deleteModal').attr('action', "{{ route('menu.destroy', '') }}" + '/' + id);
         });
     </script>
 @endsection

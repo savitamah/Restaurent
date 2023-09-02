@@ -64,3 +64,4 @@
 @section('scripts')
     <script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
 @endsection
+ 

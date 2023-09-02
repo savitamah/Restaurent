@@ -24,7 +24,18 @@ Route::group(['middleware' => ['role:admin']], function () {
     });
     //category routes
     Route::resource('/category', \App\Http\Controllers\CategoryController::class, ['names' =>'category']);
-    //menu routes
-    Route::resource('/menu', \App\Http\Controllers\MenuController::class, ['names' =>'menu']);
+    
+
+    // Menu routes
+    Route::resource('/menu', \App\Http\Controllers\MenuController::class, ['names' => 'menu']);
+
+    //blog routes
+
+    Route::resource('/blog', \App\Http\Controllers\BlogController::class, ['names' =>'blog']);
+    
+    // Gallery routes
+    Route::resource('/gallery', \App\Http\Controllers\GalleryController::class, ['names' => 'gallery']);
+    // Slider routes
+    Route::resource('/slider', \App\Http\Controllers\SliderController::class, ['names' => 'slider']);
 });
 
